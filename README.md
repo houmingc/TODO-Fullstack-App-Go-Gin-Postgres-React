@@ -2,7 +2,15 @@ current Dockerfile is using Node.js version 8, which is outdated and does not su
 
 To build
 - make sure docker daemon is up
+- for docker to run the updated file, docker build
 - docker-compose up -d
+
+1.docker-compose down
+2. docker-compose build
+3.docker-compose up -d
+4. docker-compose ps
+
+http://localhost:3000
 
  the environment variables for POSTGRES_DB, POSTGRES_USER, and POSTGRES_PASSWORD in your docker-compose.yml file should match those defined in your Dockerfile. This ensures that the PostgreSQL container is configured consistently across your Dockerfile and Docker Compose setup.
 
@@ -15,6 +23,8 @@ Database Initialization: The COPY psql_dump.sql /docker-entrypoint-initdb.d/ com
 Deprecation: The links option is deprecated in newer versions of Docker Compose. You can rely on depends_on for service ordering, as Docker Compose manages networking by default.
 
 Access the React application at http://localhost:3000/ after starting the container to verify everything works correctly.
+
+
 # TODO-Fullstack-App-Go-Gin-Postgres-React
 ![Test Coverage](backend/api/coverage_badge.png)
 
